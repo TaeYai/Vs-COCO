@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="sketch_assets.png">
+	<!-- Created with Adobe Flash Professional version 15.0.0.173 -->
+	<!-- http://www.adobe.com/products/flash.html -->
+	<SubTexture name="sketch down0000" x="11" y="11" width="362" height="703" pivotX="209.8" pivotY="292.55"/>
+	<SubTexture name="sketch down0001" x="11" y="11" width="362" height="703"/>
+	<SubTexture name="sketch down0002" x="400" y="11" width="362" height="703"/>
+	<SubTexture name="sketch down0003" x="400" y="11" width="362" height="703"/>
+	<SubTexture name="sketch down0004" x="789" y="11" width="362" height="703"/>
+	<SubTexture name="sketch down0005" x="789" y="11" width="362" height="703"/>
+	<SubTexture name="sketch down0006" x="1178" y="11" width="362" height="703"/>
+	<SubTexture name="sketch down0007" x="1178" y="11" width="362" height="703"/>
+	<SubTexture name="sketch down0008" x="1178" y="11" width="362" height="703"/>
+	<SubTexture name="sketch down0009" x="1178" y="11" width="362" height="703"/>
+	<SubTexture name="sketch down0010" x="1178" y="11" width="362" height="703"/>
+	<SubTexture name="sketch down0011" x="1178" y="11" width="362" height="703"/>
+	<SubTexture name="sketch down0012" x="1178" y="11" width="362" height="703"/>
+	<SubTexture name="sketch down0013" x="1178" y="11" width="362" height="703"/>
+	<SubTexture name="sketch down0014" x="1178" y="11" width="362" height="703"/>
+	<SubTexture name="sketch down0015" x="1178" y="11" width="362" height="703"/>
+	<SubTexture name="sketch idle0000" x="1567" y="11" width="356" height="766" pivotX="-762.65" pivotY="-184.1"/>
+	<SubTexture name="sketch idle0001" x="1567" y="11" width="356" height="766"/>
+	<SubTexture name="sketch idle0002" x="1950" y="11" width="356" height="766"/>
+	<SubTexture name="sketch idle0003" x="1950" y="11" width="356" height="766"/>
+	<SubTexture name="sketch idle0004" x="2333" y="11" width="356" height="766"/>
+	<SubTexture name="sketch idle0005" x="2333" y="11" width="356" height="766"/>
+	<SubTexture name="sketch idle0006" x="2716" y="11" width="356" height="766"/>
+	<SubTexture name="sketch idle0007" x="2716" y="11" width="356" height="766"/>
+	<SubTexture name="sketch idle0008" x="3099" y="11" width="356" height="766"/>
+	<SubTexture name="sketch idle0009" x="3099" y="11" width="356" height="766"/>
+	<SubTexture name="sketch idle0010" x="1567" y="11" width="356" height="766"/>
+	<SubTexture name="sketch idle0011" x="1567" y="11" width="356" height="766"/>
+	<SubTexture name="sketch idle0012" x="1567" y="11" width="356" height="766"/>
+	<SubTexture name="sketch idle0013" x="1567" y="11" width="356" height="766"/>
+	<SubTexture name="sketch left0000" x="3482" y="11" width="502" height="747" pivotX="381.4" pivotY="328.55"/>
+	<SubTexture name="sketch left0001" x="3482" y="11" width="502" height="747"/>
+	<SubTexture name="sketch left0002" x="4011" y="11" width="502" height="747"/>
+	<SubTexture name="sketch left0003" x="4011" y="11" width="502" height="747"/>
+	<SubTexture name="sketch left0004" x="4540" y="11" width="502" height="747"/>
+	<SubTexture name="sketch left0005" x="4540" y="11" width="502" height="747"/>
+	<SubTexture name="sketch left0006" x="5069" y="11" width="502" height="747"/>
+	<SubTexture name="sketch left0007" x="5069" y="11" width="502" height="747"/>
+	<SubTexture name="sketch left0008" x="5598" y="11" width="502" height="747"/>
+	<SubTexture name="sketch left0009" x="5598" y="11" width="502" height="747"/>
+	<SubTexture name="sketch left0010" x="5598" y="11" width="502" height="747"/>
+	<SubTexture name="sketch left0011" x="5598" y="11" width="502" height="747"/>
+	<SubTexture name="sketch left0012" x="5598" y="11" width="502" height="747"/>
+	<SubTexture name="sketch left0013" x="5598" y="11" width="502" height="747"/>
+	<SubTexture name="sketch left0014" x="5598" y="11" width="502" height="747"/>
+	<SubTexture name="sketch left0015" x="5598" y="11" width="502" height="747"/>
+	<SubTexture name="sketch left0016" x="5598" y="11" width="502" height="747"/>
+	<SubTexture name="sketch right0000" x="6127" y="11" width="469" height="711" pivotX="188.35" pivotY="305.75"/>
+	<SubTexture name="sketch right0001" x="6127" y="11" width="469" height="711"/>
+	<SubTexture name="sketch right0002" x="6623" y="11" width="469" height="711"/>
+	<SubTexture name="sketch right0003" x="6623" y="11" width="469" height="711"/>
+	<SubTexture name="sketch right0004" x="7119" y="11" width="469" height="711"/>
+	<SubTexture name="sketch right0005" x="7119" y="11" width="469" height="711"/>
+	<SubTexture name="sketch right0006" x="7615" y="11" width="469" height="711"/>
+	<SubTexture name="sketch right0007" x="7615" y="11" width="469" height="711"/>
+	<SubTexture name="sketch right0008" x="7615" y="11" width="469" height="711"/>
+	<SubTexture name="sketch right0009" x="7615" y="11" width="469" height="711"/>
+	<SubTexture name="sketch right0010" x="7615" y="11" width="469" height="711"/>
+	<SubTexture name="sketch right0011" x="7615" y="11" width="469" height="711"/>
+	<SubTexture name="sketch right0012" x="7615" y="11" width="469" height="711"/>
+	<SubTexture name="sketch right0013" x="7615" y="11" width="469" height="711"/>
+	<SubTexture name="sketch right0014" x="7615" y="11" width="469" height="711"/>
+	<SubTexture name="sketch right0015" x="7615" y="11" width="469" height="711"/>
+	<SubTexture name="sketch right0016" x="7615" y="11" width="469" height="711"/>
+	<SubTexture name="sketch up0000" x="11" y="804" width="432" height="839" pivotX="265.4" pivotY="424.5"/>
+	<SubTexture name="sketch up0001" x="11" y="804" width="432" height="839"/>
+	<SubTexture name="sketch up0002" x="470" y="804" width="432" height="839"/>
+	<SubTexture name="sketch up0003" x="470" y="804" width="432" height="839"/>
+	<SubTexture name="sketch up0004" x="929" y="804" width="432" height="839"/>
+	<SubTexture name="sketch up0005" x="929" y="804" width="432" height="839"/>
+	<SubTexture name="sketch up0006" x="1388" y="804" width="432" height="839"/>
+	<SubTexture name="sketch up0007" x="1388" y="804" width="432" height="839"/>
+	<SubTexture name="sketch up0008" x="1388" y="804" width="432" height="839"/>
+	<SubTexture name="sketch up0009" x="1388" y="804" width="432" height="839"/>
+	<SubTexture name="sketch up0010" x="1388" y="804" width="432" height="839"/>
+	<SubTexture name="sketch up0011" x="1388" y="804" width="432" height="839"/>
+	<SubTexture name="sketch up0012" x="1388" y="804" width="432" height="839"/>
+	<SubTexture name="sketch up0013" x="1388" y="804" width="432" height="839"/>
+	<SubTexture name="sketch up0014" x="1388" y="804" width="432" height="839"/>
+	<SubTexture name="sketch up0015" x="1388" y="804" width="432" height="839"/>
+	<SubTexture name="sketch up0016" x="1388" y="804" width="432" height="839"/>
+</TextureAtlas>
