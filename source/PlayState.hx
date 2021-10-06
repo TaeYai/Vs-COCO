@@ -2874,19 +2874,16 @@ else
 
 				if (storyPlaylist.length <= 0)
 				{
-					transIn = FlxTransitionableState.defaultTransIn;
-					transOut = FlxTransitionableState.defaultTransOut;
-
-					paused = true;
-
-					FlxG.sound.music.stop();
-					vocals.stop();
-					if (FlxG.save.data.scoreScreen)
-						openSubState(new ResultsScreen());
-					else
-					{
-						FlxG.sound.playMusic(Paths.music('freakyMenu'));
-						FlxG.switchState(new MainMenuState());
+					switch (PlayState.SONG.song.toLowerCase()){
+						case 'calm-paster':
+							transIn = FlxTransitionableState.defaultTransIn;
+							transOut = FlxTransitionableState.defaultTransOut;
+							inCutscene = true;
+							paused = true;
+							FlxG.sound.music.stop();
+							vocals.stop(); /
+							video.playMP4(Paths.video('name'), new MainMenuState()); 
+							//EndVideo Here
 					}
 
 					#if windows
