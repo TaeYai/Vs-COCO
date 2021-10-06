@@ -239,6 +239,7 @@ class PlayState extends MusicBeatState
 
 	//Character Sing
 	var coco:Character;
+	var cococam:FlxObject = new FlxObject(200, 300, 1, 1);
 	//Character Sing or Not?
 	var iscoco:Bool = false;
 	var isbf:Bool = true;
@@ -246,6 +247,9 @@ class PlayState extends MusicBeatState
 
 	var player1Character:String = 'epic';
 
+	//Time Character
+	public static var night:Bool = false;
+	public static var evening:Bool = false;
 
 	override public function create()
 	{
@@ -738,24 +742,39 @@ class PlayState extends MusicBeatState
 			{
 					defaultCamZoom = 0.9;
 					curStage = 'park';
-					var bg:FlxSprite = new FlxSprite(-825, -200).loadGraphic(Paths.image('park_bg_1'));
-					bg.antialiasing = true;
-					bg.scrollFactor.set(1, 1);
-					bg.active = false;
-					add(bg);
+					switch (SONG.song.toLowerCase()){
+						case 'calm':
+							var bg:FlxSprite = new FlxSprite(-825, -200).loadGraphic(Paths.image('park_bg_1'));
+							bg.antialiasing = true;
+							bg.scrollFactor.set(1, 1);
+							bg.active = false;
+							add(bg);
+							evening = false;
+							night = false;
+						case 'joyful':
+							var bg:FlxSprite = new FlxSprite(-825, -200).loadGraphic(Paths.image('park_bg_1'));
+							bg.antialiasing = true;
+							bg.scrollFactor.set(1, 1);
+							bg.active = false;
+							add(bg);
+							evening = true;
+							night = false;
+					}
+					
 
 			}
 
 			case 'park-night':
 			{
-					defaultCamZoom = 0.9;
+					defaultCamZoom = 0.8;
 					curStage = 'park-night';
+					
 					var bg:FlxSprite = new FlxSprite(-825, -200).loadGraphic(Paths.image('night'));
 					bg.antialiasing = true;
 					bg.scrollFactor.set(1, 1);
 					bg.active = false;
 					add(bg);
-
+					night = true;
 					var stars = Paths.getSparrowAtlas('stars', "shared");
 
 					parknightStars = new FlxSprite(-560, 160);
@@ -918,6 +937,13 @@ class PlayState extends MusicBeatState
 				gf.x += 180;
 				gf.y += 300;
 		}
+
+	/*	switch (curSong){
+			case 'Joyful':
+				evening = true;
+			case 'Calm-Paster':
+				night = true;
+		}*/
 
 		add(gf);
 
@@ -1277,7 +1303,7 @@ class PlayState extends MusicBeatState
 
 		generateStaticArrows(0);
 		generateStaticArrows(1);
-
+		trace(dad);
 
 		#if windows
 		// pre lowercasing the song name (startCountdown)
@@ -2256,9 +2282,9 @@ class PlayState extends MusicBeatState
 						camFollow.x = dad.getMidpoint().x + 100;
 						camFollow.y = dad.getMidpoint().y - 40;
 					case 'sketch':
-						defaultCamZoom = 0.8;
+						//defaultCamZoom = 0.8;
 						camFollow.x = dad.getMidpoint().x + 160;
-						camFollow.y = dad.getMidpoint().y;
+						camFollow.y = dad.getMidpoint().y + 30;
 				}
 						if (FlxG.save.data.camnoteoption)
 						{
@@ -2738,10 +2764,10 @@ else
 			keyShit();
 
 
-		#if debug
+		
 		if (FlxG.keys.justPressed.ONE)
 			endSong();
-		#end
+		
 	}
 
 	function endCutscene(dialogueBox:DialogueBox){
@@ -2749,7 +2775,12 @@ else
         trace("endCutscene");
     //    var black:FlxSprite = new FlxSprite(-256, -256).makeGraphic(FlxG.width * 2, FlxG.height * 2, FlxColor.BLACK);
     //    black.scrollFactor.set(0);
+			var offsetX = 0;
+			var offsetY = 0;
+			prevCamFollow = camFollow;
         inCutscene = true;
+		var cutsceneCam:FlxObject = new FlxObject(camFollow.x, camFollow.y, 1, 1);
+			FlxG.camera.follow(cutsceneCam);
         for (i in strumLineNotes)
             i.visible = false;
         healthBar.visible = false;
@@ -3860,26 +3891,48 @@ else
 			//camera thing
 			var offsetX = 0;
 			var offsetY = 0;
+			//Main Things
 			camFollow.setPosition(boyfriend.getMidpoint().x - 100 + offsetX, boyfriend.getMidpoint().y - 100 + offsetY);
-			//Main Thing
-			remove(dad);
+			for (i in strumLineNotes)
+				i.visible = false;
+			var cutsceneCam:FlxObject = new FlxObject(300, camFollow.y, 1, 1);
+			FlxG.camera.follow(cutsceneCam);
+			//FlxG.camera.focusOn(camFollow.getPosition());
+			canPause = false;
+			FlxG.sound.music.volume = 0;
+			vocals.volume = 0;
+			dad.alpha = 0;
+			paused = true;
+			healthBarBG.visible = false;
+			kadeEngineWatermark.visible = false;
+			healthBar.visible = false;
+			iconP1.visible = false;
+			iconP2.visible = false;
+			scoreTxt.visible = false;
+			prevCamFollow = camFollow;
 			inCutscene = true;
-						new FlxTimer().start(0.5, function(tmr:FlxTimer)
-							{
+			
+						
 								//animation here
-								var whatdadogdoin:FlxSprite = new FlxSprite(100,100);
+								var whatdadogdoin:FlxSprite = new FlxSprite(dad.x,dad.y);
 								whatdadogdoin.frames = Paths.getSparrowAtlas('characters/Coco_snap');
 								whatdadogdoin.animation.addByPrefix('idle', 'coco snap0', 24, false);
-								
 								whatdadogdoin.scrollFactor.set();
 								whatdadogdoin.updateHitbox();
-								//whatdadogdoin.screenCenter();
 								
+								whatdadogdoin.setGraphicSize(Std.int(whatdadogdoin.width * 1));
+								//agotiSummon.scrollFactor.set();
+								whatdadogdoin.screenCenter();
+								whatdadogdoin.antialiasing = true;
+								whatdadogdoin.x -= 200;
+								whatdadogdoin.y -= 300;
+								whatdadogdoin.cameras = [camGame];
 								add(whatdadogdoin);
 								whatdadogdoin.animation.play('idle');
 								new FlxTimer().start(0.5, function(tmr:FlxTimer)
 									{
 										FlxG.camera.flash(FlxColor.WHITE, 1);
+										FlxG.sound.play(Paths.sound('dogsnap', 'shared'), 3);
 									});
 
 
@@ -3887,7 +3940,7 @@ else
 										{
 											LoadingState.loadAndSwitchState(new PlayState());
 										});
-							});
+							
 		}
 
 	var startedMoving:Bool = false;
@@ -4006,10 +4059,13 @@ else
 						switchCharacter('coco');
 						switchCharacter('bf');
 						dad.playAnim('idle');
+						defaultCamZoom = 1;
+						camFollow.y += 100;
 					case 320:
 						switchCharacter('dad');
 					case 384:
 						resetCharacters();
+						defaultCamZoom = 0.8;
 						switchCharacter('dad');
 						switchCharacter('bf');
 						coco.playAnim('idle');
@@ -4018,11 +4074,14 @@ else
 						switchCharacter('coco');
 						switchCharacter('bf');
 						dad.playAnim('idle');
+						camFollow.y += 100;
+						defaultCamZoom = 1;
 					case 448:
 						resetCharacters();
 						switchCharacter('dad');
 						switchCharacter('bf');
 						coco.playAnim('idle');
+						defaultCamZoom = 0.8;
 					case 480:
 						switchCharacter('coco');
 					case 512:
@@ -4035,21 +4094,27 @@ else
 						switchCharacter('coco');
 						switchCharacter('bf');
 						dad.playAnim('idle');
+						camFollow.y += 50;
+						defaultCamZoom = 1;
 					case 640:
 						resetCharacters();
 						switchCharacter('dad');
 						switchCharacter('bf');
 						coco.playAnim('idle');
+						defaultCamZoom = 0.8;
 					case 656:
 						resetCharacters();
 						switchCharacter('coco');
 						switchCharacter('bf');
 						dad.playAnim('idle');
+						camFollow.y += 100;
+						defaultCamZoom = 1;
 					case 688:
 						resetCharacters();
 						switchCharacter('dad');
 						switchCharacter('bf');
 						coco.playAnim('idle');
+						defaultCamZoom = 0.8;
 					case 696:
 						switchCharacter('coco');
 

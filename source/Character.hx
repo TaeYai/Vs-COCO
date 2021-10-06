@@ -32,7 +32,18 @@ class Character extends FlxSprite
 		{
 			case 'gf':
 				// GIRLFRIEND CODE
-				tex = Paths.getSparrowAtlas('characters/GF_ass_sets_park');
+				if (!PlayState.night && !PlayState.evening)
+					{
+						tex = Paths.getSparrowAtlas('characters/GF_ass_sets_park');
+					}
+				else if(!PlayState.night){
+					tex = Paths.getSparrowAtlas('characters/GF_assets_Evening');
+				}
+				else 
+					{
+						tex = Paths.getSparrowAtlas('characters/GF_assets_Night');
+					}
+				
 				frames = tex;
 				animation.addByPrefix('cheer', 'GF Cheer', 24, false);
 				animation.addByPrefix('singLEFT', 'GF left note', 24, false);
@@ -80,9 +91,21 @@ class Character extends FlxSprite
 
 				playAnim('idle');
 				
+				
 			case 'bf':
 				iconColor = 'FF31B0D1';
-				var tex = Paths.getSparrowAtlas('characters/BoyFriend_Assets_park', 'shared');
+				
+				if (!PlayState.night && !PlayState.evening)
+					{
+						tex = Paths.getSparrowAtlas('characters/BoyFriend_Assets_park', 'shared');
+					}
+				else if(!PlayState.night){
+					tex = Paths.getSparrowAtlas('characters/BOYFRIEND_Evening');
+				}
+				else 
+					{
+						tex = Paths.getSparrowAtlas('characters/BOYFRIEND_Night');
+					}
 				frames = tex;
 
 				trace(tex.frames.length);
@@ -129,7 +152,7 @@ class Character extends FlxSprite
 				flipX = true;
 				
 				case 'sketch':
-				tex = Paths.getSparrowAtlas('characters/sketch_assets', 'shared');
+				tex = Paths.getSparrowAtlas('characters/sketch_assets_Night', 'shared');
 				iconColor = 'FF6B4436';
 				frames = tex;
 				animation.addByPrefix('idle', 'sketch idle', 24, false);
@@ -146,7 +169,18 @@ class Character extends FlxSprite
 				playAnim('idle');
 				
 				case 'coco':
-				tex = Paths.getSparrowAtlas('characters/Coco_assets', 'shared');
+					if (!PlayState.night && !PlayState.evening)
+						{
+							tex = Paths.getSparrowAtlas('characters/Coco_assets', 'shared');
+						}
+					else if(!PlayState.night){
+						tex = Paths.getSparrowAtlas('characters/Coco_assets_Evening');
+					}
+					else 
+						{
+							tex = Paths.getSparrowAtlas('characters/Coco_assets_Night');
+						}
+				
 				iconColor = 'FFA37E6A';
 				frames = tex;
 				animation.addByPrefix('idle', 'coco idle', 24, false);
