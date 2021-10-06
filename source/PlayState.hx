@@ -3783,13 +3783,13 @@ else
 			//camera thing
 			var offsetX = 0;
 			var offsetY = 0;
-			//Main Things
+			
 			camFollow.setPosition(boyfriend.getMidpoint().x - 100 + offsetX, boyfriend.getMidpoint().y - 100 + offsetY);
+			var cutsceneCam:FlxObject = new FlxObject(300, camFollow.y, 1, 1); //main camera here 
+			FlxG.camera.follow(cutsceneCam);
+			//Main Things
 			for (i in strumLineNotes)
 				i.visible = false;
-			var cutsceneCam:FlxObject = new FlxObject(300, camFollow.y, 1, 1);
-			FlxG.camera.follow(cutsceneCam);
-			//FlxG.camera.focusOn(camFollow.getPosition());
 			canPause = false;
 			FlxG.sound.music.volume = 0;
 			vocals.volume = 0;
@@ -3811,25 +3811,26 @@ else
 								whatdadogdoin.animation.addByPrefix('idle', 'coco snap0', 24, false);
 								whatdadogdoin.scrollFactor.set();
 								whatdadogdoin.updateHitbox();
-								
-								whatdadogdoin.setGraphicSize(Std.int(whatdadogdoin.width * 1));
-								//agotiSummon.scrollFactor.set();
+								whatdadogdoin.setGraphicSize(Std.int(whatdadogdoin.width * 1)); //Animation Scale
 								whatdadogdoin.screenCenter();
 								whatdadogdoin.antialiasing = true;
-								whatdadogdoin.x -= 200;
-								whatdadogdoin.y -= 300;
+								//dog x y
+								whatdadogdoin.x -= 200; //Animation X
+								whatdadogdoin.y -= 300; //Animation Y
 								whatdadogdoin.cameras = [camGame];
 								add(whatdadogdoin);
-								whatdadogdoin.animation.play('idle');
+								whatdadogdoin.animation.play('idle'); //play Animation Code
 								new FlxTimer().start(0.5, function(tmr:FlxTimer)
 									{
 										FlxG.camera.flash(FlxColor.WHITE, 1);
 										FlxG.sound.play(Paths.sound('dogsnap', 'shared'), 3);
+										//sound and effect
+										// if you want to sync the sound just copy the FlxTimer and change the Valve and put the Sound code
 									});
-
+								
 
 									new FlxTimer().start(2, function(tmr:FlxTimer)
-										{
+										{ //go to third song
 											LoadingState.loadAndSwitchState(new PlayState());
 										});
 							
