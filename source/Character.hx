@@ -34,7 +34,7 @@ class Character extends FlxSprite
 				// GIRLFRIEND CODE
 				if (!PlayState.night && !PlayState.evening)
 					{
-						tex = Paths.getSparrowAtlas('characters/GF_ass_sets_park');
+						tex = Paths.getSparrowAtlas('characters/GF_assets_Evening');
 					}
 				else if(!PlayState.night){
 					tex = Paths.getSparrowAtlas('characters/GF_assets_Evening');
@@ -97,7 +97,7 @@ class Character extends FlxSprite
 				
 				if (!PlayState.night && !PlayState.evening)
 					{
-						tex = Paths.getSparrowAtlas('characters/BoyFriend_Assets_park', 'shared');
+						tex = Paths.getSparrowAtlas('characters/BOYFRIEND_Evening', 'shared');
 					}
 				else if(!PlayState.night){
 					tex = Paths.getSparrowAtlas('characters/BOYFRIEND_Evening');
@@ -171,7 +171,7 @@ class Character extends FlxSprite
 				case 'coco':
 					if (!PlayState.night && !PlayState.evening)
 						{
-							tex = Paths.getSparrowAtlas('characters/Coco_assets', 'shared');
+							tex = Paths.getSparrowAtlas('characters/Coco_assets_Evening', 'shared');
 						}
 					else if(!PlayState.night){
 						tex = Paths.getSparrowAtlas('characters/Coco_assets_Evening');
