@@ -2774,11 +2774,12 @@ else
 							FlxG.sound.music.stop();
 							vocals.stop(); 
 							
-							video.playMP4(Paths.video('hi')); 
+							video.playMP4(Paths.video('hi'));  //Video Name
 							video.finishCallback = function()
 								{
 									LoadingState.loadAndSwitchState(new MainMenuState());
 								}
+								//End Video
 					}
 
 					#if windows
