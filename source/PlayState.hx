@@ -983,7 +983,7 @@ class PlayState extends MusicBeatState
 		doof.finishThing = startCountdown;
 		doof2 = new DialogueBox(false, dialogueEnd);
 		doof2.scrollFactor.set();
-		doof2.finishThing = endanimation;
+		doof2.finishThing = postvideo;
 
 		Conductor.songPosition = -5000;
 		
@@ -3774,6 +3774,20 @@ else
 			FlxG.switchState(new FreeplayState());
 		}
 
+	}
+
+	function postvideo() 
+	{
+		canPause = false;
+		FlxG.sound.music.volume = 0;
+		vocals.volume = 0;
+		paused = true;
+		inCutscene = true;
+		video.playMP4(Paths.video('hi'));  //Video Name
+		video.finishCallback = function()
+			{
+				LoadingState.loadAndSwitchState(new PlayState());
+			}
 	}
 
 	function endanimation():Void
