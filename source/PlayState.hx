@@ -2155,16 +2155,13 @@ class PlayState extends MusicBeatState
 
 				if (camFollow.x != dad.getMidpoint().x + 150 && !PlayState.SONG.notes[Std.int(curStep / 16)].mustHitSection)
 					{
-						if (iscoco){
-							camFollow.setPosition(coco.getMidpoint().x + 150, coco.getMidpoint().y + 100);
-							camPos.set(coco.getGraphicMidpoint().x, coco.getGraphicMidpoint().y);
-						}
-						else{
-							camPos.set(dad.getGraphicMidpoint().x, dad.getGraphicMidpoint().y);
-							camFollow.setPosition(dad.getMidpoint().x + 150, dad.getMidpoint().y - 100);
-						}
+
 				
-                    
+						if (iscoco == true)
+							camFollow.setPosition(coco.getMidpoint().x, coco.getMidpoint().y - 90);
+						else
+							camFollow.setPosition(dad.getMidpoint().x + 150, dad.getMidpoint().y - 100);
+						
 
 				switch (dad.curCharacter)
 				{
