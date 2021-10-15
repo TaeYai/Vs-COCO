@@ -239,7 +239,7 @@ class PlayState extends MusicBeatState
 
 	//Character Sing
 	var coco:Character;
-	var cococam:FlxObject = new FlxObject(200, 300, 1, 1);
+	var cococam:FlxObject = new FlxObject(200, 350, 1, 1);
 	//Character Sing or Not?
 	var iscoco:Bool = false;
 	var isbf:Bool = true;
@@ -746,13 +746,21 @@ class PlayState extends MusicBeatState
 					defaultCamZoom = 0.9;
 					curStage = 'park';
 					switch (SONG.song.toLowerCase()){
+						case 'tutorial':
+							var bg:FlxSprite = new FlxSprite(-825, -200).loadGraphic(Paths.image('park_bg_1'));
+							bg.antialiasing = true;
+							bg.scrollFactor.set(1, 1);
+							bg.active = false;
+							add(bg);
+							evening = true;
+							night = false;
 						case 'calm':
 							var bg:FlxSprite = new FlxSprite(-825, -200).loadGraphic(Paths.image('park_bg_1'));
 							bg.antialiasing = true;
 							bg.scrollFactor.set(1, 1);
 							bg.active = false;
 							add(bg);
-							evening = false;
+							evening = true;
 							night = false;
 						case 'joyful':
 							var bg:FlxSprite = new FlxSprite(-825, -200).loadGraphic(Paths.image('park_bg_1'));
@@ -2771,7 +2779,7 @@ else
 							FlxG.sound.music.stop();
 							vocals.stop(); 
 							
-							video.playMP4(Paths.video('hi'));  //Video Name
+							video.playMP4(Paths.video('coco outro'));  //Video Name
 							video.finishCallback = function()
 								{
 									LoadingState.loadAndSwitchState(new MainMenuState());
@@ -3783,7 +3791,7 @@ else
 		vocals.volume = 0;
 		paused = true;
 		inCutscene = true;
-		video.playMP4(Paths.video('hi'));  //Video Name
+		video.playMP4(Paths.video('coco snap'));  //Video Name
 		video.finishCallback = function()
 			{
 				LoadingState.loadAndSwitchState(new PlayState());
